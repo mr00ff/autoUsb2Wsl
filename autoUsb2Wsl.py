@@ -1,3 +1,4 @@
+import gc
 import subprocess
 import re
 import time
@@ -54,6 +55,7 @@ if __name__ == "__main__":
         # Start the main loop
         while True:
             get_usb_devices()
+            gc.collect()
             time.sleep(sleep_time)
     except Exception as e:
         print(e)
